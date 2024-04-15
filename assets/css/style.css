@@ -1,0 +1,187 @@
+body {
+    background-image: url(background.png); 
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Navigation bar */
+.top-bar, .top-bar-left {
+    background-color: black !important; 
+    color: rgb(195, 208, 221);
+}
+#top-nav {
+    background-color: black !important; 
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Apply styling to all text on html */
+.text-display {
+    color: rgb(209, 207, 207);
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Title for each page */
+.callout-primary {
+    border: none;
+}
+.callout {
+    color: rgb(27, 27, 29);
+}
+
+.row {
+    background-color: black;
+    margin-top: -25px;
+}
+#title-insta {
+    background-color: black;
+}
+#title {
+    text-align: center; /* Title Page Header */
+    margin: 70px 0; /* Reduced margin for better spacing */
+}
+.reveal {
+    text-align: center;
+    background-color: rgb(48, 52, 54);
+}
+
+/* Get Started Page Style */
+.hero-image {
+    background-image: url("hero.png");
+    background-color: #cccccc; 
+    margin-top: 50px;
+    height: 700px; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+}
+#getStarted {
+    text-align: center; 
+    border-radius: 14px;
+    padding: 20px;
+    margin: 40px;
+    font-size: 40px;
+    background-color: rgb(56, 56, 56);
+    color: rgb(209, 207, 207);
+}
+
+/* Home Page Style */
+/* Linked Sites */
+#links {
+    padding-top: 20px;
+}
+
+/* Mood selector */
+#dropdownLabel {
+    font-size: 24px;
+}
+#moodDropdown {
+    border-radius: 7px;
+    background-color: rgb(44, 44, 48);
+    border: none;
+}
+.selectedText {
+    color: ivory;
+}
+.button { 
+    margin-top: 20px;
+    margin-left: 249px; /* Adjusted margin */
+    background-color: rgb(24, 26, 27);
+    color: rgb(232, 230, 227);
+    border: 1px solid rgb(48, 52, 54);
+}
+
+/* Mic and face API Buttons */
+.micBtn { 
+    margin-top: 20px;
+    margin-left: 260px; /* Adjusted margin */
+    background-color: rgb(24, 26, 27);
+    color: rgb(232, 230, 227);
+    border: 1px solid rgb(48, 52, 54); /* Simplified border */
+}
+.faceButton {
+    background-color: rgb(209, 207, 207);
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-weight: bold;
+    margin-left: 10%;
+}
+
+/* Two Columns */
+#medium-6-columns {
+    opacity: 1; /* Fully opaque */
+}
+.thumbnail {
+    border: none;
+}
+#speak {
+    text-align: center;
+    padding-top: 10px;
+}
+
+/* Spotify API Playlist */
+h5 { 
+    color: rgb(209, 207, 207);
+    font-family: 'Montserrat', sans-serif;
+}
+#playlistName {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 37%;
+    margin-top: 5%;
+}
+
+/* Element that says listen now on Spotify */
+#spotLink {
+    margin: auto;
+    margin-left: 43%;
+}
+
+/* Table styling */
+table{
+    margin-top: 5%;
+    margin-left: 29%;
+}
+thead {
+    color: rgb(232, 230, 227);
+    background-color: rgb(24, 26, 27);
+    border: 1px solid rgb(48, 52, 54);
+}
+th {
+    opacity: 0.8; /* Reduced opacity */
+    font-weight: bold;
+    font-size: 20px;
+}
+#songList, tbody {
+    color: rgb(232, 230, 227);
+    background-color: rgb(24, 26, 27);
+    border: 1px solid rgb(48, 52, 54);
+    width: 100%; /* Set the width to 100% */
+    
+}
+tbody tr:nth-child(even) {
+    background-color: rgb(19, 19, 19);
+}
+caption, tbody td {
+    font-weight: bold;
+    color: rgb(232, 230, 227);
+    border: 1px solid rgb(48, 52, 54);
+    padding: 1.5rem 3rem; /* Adjusted padding */
+    text-align: center;
+}
+
+/* About Us Page */
+h3 {
+    text-align: center;
+    color: rgb(209, 207, 207);
+    font-family: 'Montserrat', sans-serif;
+}
+.aboutBio, .aboutMe {
+    text-align: center;
+    color: rgb(170, 170, 170);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+}
+.profile {
+    text-align: center;
+    margin-left: 50px;
+}

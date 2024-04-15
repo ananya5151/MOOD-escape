@@ -1,0 +1,150 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MOOD-ESCAPE</title>
+
+  <!-- All Style Sheets -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+   <!--Navigation Bar-->
+  <header class="top-bar">
+    <div class="top-bar-left">
+      <ul class="dropdown menu" data-dropdown-menu>
+        <li class="menu-text" id="top-nav">Menu</li>
+        <li><a href="home.html" id="top-nav">Home</a></li>
+        <li><a href="past-mood.html" id="top-nav">Past Moods</a></li>
+        <li><a href="about.html" id="top-nav">About Us</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Beginning of main wrapper UI -->
+  <div class="wrapper">
+    <div class="wrapper-inner">
+
+      <div class="position-left reveal-for-large" id="my-info">
+
+        <!-- Title -->
+        <div class="callout-primary">
+          <div class="row column" id="title-inst">
+            <h1 class="text-display" id="title">Welcome to MOOD ESCAPE</h1>
+            <div class="reveal" id="exampleModal1" data-reveal>
+              <video id="video" width="550" height="360" autoplay muted></video>
+              <button class="faceButton" id="button">Check Your Mood</button>
+              <h3 id="waiting"></h3>
+            </div>
+          </div>
+
+          <!-- Instructions -->
+          <div class="row mt-10 mb-10" id="instruction">
+            <div class="medium-6 columns">
+              <h3 class="text-display">Instructions</h3>
+              <p class="text-display">Selet a mood option from the dropdown menu on your right!
+              </p>
+
+              <!-- Linked Sites -->
+              <p class="text-display">Below you will find links to the Repository and APIs</p>
+              <ul class="menu" id="links" class="text-display">
+                <li><a href="https://github.com/ananya5151/MOOD-escape" target="_blank"><i class="fa fa-github"
+                      aria-hidden="true"></i>
+                    Github Repository</a></li>
+                <li><a href="https://www.spotify.com/us/" target="_blank"><i class="fa fa-spotify"
+                      aria-hidden="true"></i>
+                    Spofity</a></li>
+              </ul>
+            </div>
+
+            <!-- Mood dropdown -->
+            <div class="medium-6 columns">
+              <label id="dropdownLabel" class="text-display">Select Mood
+                <select id="moodDropdown" onchange="GetSelectedTextValue(this)">
+                  <option value="2LTA5Jxg19elESWNFYCnij">Songs Worth Checking Out</option>
+                  <option id="happy" value="1h90L3LP8kAJ7KGjCV2Xfd">Happy</option>
+                  <option id="sad" value="7ABD15iASBIpPP5uJ5awvq">Sad</option>
+                  <option id="energetic" value="2lmcuXNkjYOoQeXvwqvvFT">Energetic</option>
+                  <option id="aggressive" value="0kbIVraS3Xa7FhvAb9KSGe">Aggressive</option>
+                  <option id="relaxed" value="4vQ0ixS6GKuNV0xMmjfk9j">Relaxed</option>
+                  <option id="sleepy" value="6uMZkWBIIY3v1U3G9Stoi4">Sleepy</option>
+                  <option id="classy" value="50Tl9aaCBX9Ys5kc0DbJeH">Classy</option>
+                  <option id="indifferent" value="1hY0i2y7ByRgFkcLHZZdVN">Indifferent</option>
+                </select>
+              </label>
+
+              <label>
+                <p class="text-display" class="lead" id="speak">
+                  To use Voice Recognition please click below:
+                </p>
+              </label>
+
+              <!-- Microphone API -->
+              <button type="button" class="micBtn" class="btn btn-primary" id="button-addon2"><i id="micImg"
+                  class="fa fa-microphone fa-5x"></i></button>
+              <br>
+            </div>
+          </div>
+          <br>
+        </div>
+
+        <div class="row mt-10 mb-10" id="instruction">
+          <div class="medium-6 columns">
+            <!-- GIF to go here -->
+            <img class="thumbnail" id="currentGif" src="https://media.giphy.com/media/1cMSWoZlxhO8w/giphy.gif">
+          </div>
+
+          <!-- Modal for Face ID API -->
+          <div class="medium-6 columns">
+            <div id="results">
+              <button class="close-button" id="micBtn" data-close aria-label="Close modal" type="button"></button>
+              <label>
+                <p class="text-display" class="lead" id="speak">
+                  To use Face ID please click below:
+                </p>
+              </label>
+              <p><button class="button modalBtn" data-open="exampleModal1"><i class="fa fa-id-badge fa-5x"></i></button>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Beginning of Spotify API Playlist -->
+        <div class="row columns">
+          <!-- Songs generated here -->
+          <h5 id="playlistName"></h5>
+          <a id="spotLink" href=""></a>
+          <table class="stack">
+            <thead>
+              <tr>
+                <!-- If we get rid of the width here the album art gets larger, ask group -->
+                <th width="150">Song</th>
+                <th width="150">Artist</th>
+                <th width="150">Album</th>
+              </tr>
+            </thead>
+            <tbody id="songList"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Functionality -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+  <script src="face-api.min.js"></script>
+  <script>
+    $(document).foundation();
+  </script>
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>
